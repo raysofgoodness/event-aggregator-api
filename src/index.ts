@@ -220,7 +220,7 @@ app.get("/api/events", async (c) => {
   });
 });
 
-app.get("/", (c) => c.text("Event Aggregator API"));
+app.get("/", (c) => c.text("Event Aggregator API v1.1 🚀"));
 
 app.onError((err, c) => {
   if (err instanceof HTTPException) {
