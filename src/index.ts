@@ -181,6 +181,7 @@ app.post("/api/events", async (c) => {
 app.get("/api/events", async (c) => {
   const site = c.req.query("site");
   const eventName = c.req.query("event_name");
+  const sessionId = c.req.query("session_id");
   const dateFrom = parseIsoDate(c.req.query("date_from"), "date_from");
   const dateTo = parseIsoDate(c.req.query("date_to"), "date_to");
   const limit = parseLimit(c.req.query("limit"));
@@ -200,6 +201,9 @@ app.get("/api/events", async (c) => {
   }
   if (eventName) {
     query = query.eq("event_type", eventName);
+  }
+  if (sessionId) {
+    query = query.eq("session_id", sessionId);
   }
   if (dateFrom) {
     query = query.gte("created_at", dateFrom);

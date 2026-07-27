@@ -325,6 +325,7 @@ List events with filters.
 |-------|------|-------------|
 | `site` | string | Exact match on `site` column |
 | `event_name` | string | Match on `event_type` column |
+| `session_id` | string (UUID) | Exact match on `session_id` column |
 | `date_from` | ISO 8601 | `created_at >= date_from` |
 | `date_to` | ISO 8601 | `created_at <= date_to` |
 | `limit` | integer | Default `100`, max `1000` |
